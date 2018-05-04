@@ -22,45 +22,71 @@ $(document).ready(function(){
 
 
 
-    // Call to Django mail
+    // Call to Django mail from hero
 
     $(document).on('submit', '#sendMsgForm', function(e) {
         e.preventDefault();
-        // if($('#name').val() =='' && $('#email').val()=='' && $('#message').val()==''){
-        //      ;
-        // }
-        $("#formID").validate();
+        
+        $("#sendMsgForm").validate();
         //Disable send button
         $('.submitBtn').prop('disabled', true);
         $('.submitBtn').html(' Please wait..Sending message');
 
         
-            $.ajax({
-                type:'POST',
-                url:'https://django-mail-server.herokuapp.com/send/message/',
-                data:{
-                    name:$('#name').val(),
-                    email:$('#email').val(),
-                    message:$('#message').val(),
-                },
-            }).done(function(){
-                //display success card
-                    $('.popover-send').addClass('remove');
-                    $('.success-popover').removeClass('remove');
-                    
-                    $('.submitBtn').prop('disabled', false);
-                    
-                    $('.submitBtn').html('Send message');
-
-            }).fail(function(){
-                    $('.submitBtn').prop('disabled', false);
-                    $('.popover-send').removeClass('remove');
-                    $('.success-popover').addClass('remove');
-                    
-                    $('.submitBtn').html('Send message');
-            });
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var message = $('#message').val();
+            ajaxcall(name,email,message);
     });
+
+    
+    // Call to Django mail from 
+    $(document).on('submit', '#sendMsgFormFooter', function(e) {
+        e.preventDefault();
+      
+        $("#sendMsgFormFooter").validate();
+        //Disable send button
+        $('.submitBtn').prop('disabled', true);
+        $('.submitBtn').html(' Please wait..Sending message');
+
+        var name = $('#nameFooter').val();
+        var email = $('#emailFooter').val();
+        var message = $('#messageFooter').val();
+            ajaxcall(name,email,message);
+    });
+
+
 });
 
 
+
+// ajax function
+function ajaxcall(name,email,message) {
+    $.ajax({
+        type: 'POST',
+        url: 'https://django-mail-server.herokuapp.com/send/message/',
+        data: {
+            name: name,
+            email: email,
+            message: message,
+        },
+    }).done(function () {
+        //display success card
+        
+        $('.cover').css('visibility','visible');
+        $('.cover').css('opacity',1);
+
+        $('.popover-send').addClass('remove');
+        $('.success-popover').removeClass('remove');
+        $('.submitBtn').prop('disabled', false);
+        $('.submitBtn').html('Send message');
+    }).fail(function () {
+        $('.submitBtn').prop('disabled', false);
+        $('.popover-send').removeClass('remove');
+        $('.success-popover').addClass('remove');
+        $('.submitBtn').html('Send message');
+
+        alert('Server error,   Problem connecting server');
+    });
+}
 

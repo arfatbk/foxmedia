@@ -14,7 +14,11 @@
 <body>
     <div class="wrapper">
         <div class="nav">
-            <div class="logo">Fox media</div>
+                <div class="logo"></div>
+                <div class="logo-text">Fox media</div>
+            <!-- <div class="logo">
+                Fox media
+            </div> -->
 
             <div class="cta-nav">
                 <a href="#contact-me" class="cta-primary">Get in touch</a>
@@ -55,22 +59,32 @@
                 </div>
             </div>
         </div>
-        <div class="section section-design">And here is what I do,
+        <div class="text-center">   And here is what I do,</div>
+        <div class="section section-design">
             <br>
             <br>
-            <img src="assets/images/design.PNG" alt="design">
+            <img src="assets/images/design.jpg" alt="design">
             <h3>Design</h3>
             <p>UI/UX Design.</p>
+            <p class="description">
+                User interface(UI) and User experience(UX) is entry point to any application or software.
+                    So, the way user see, interact with our Application (mobile app or website) is very important.
+                    If user feels comfortable with the UI/UX of our application, we win.
+                    Thats exactly what I do.
+                </p>
         </div>
         <div class="section section-dev">
-            <img src="assets/images/web.PNG" alt="web apps">
+            <img src="assets/images/website.jpg" alt="web apps">
             <h3>Web Apps</h3>
             <p>Website developement.</p>
+            <p class="description">This is the era of internet. you have a company, organization or even a shop, no matter how big or small,
+                    you need to have a website. Thats my personal thoght but suitable in most cases.</p>
         </div>
         <div class="section section-mobile">
-            <img src="assets/images/mobile.png" alt="mobile">
+            <img src="assets/images/mobileapps.jpg" alt="mobile">
             <h3>Mobile Apps</h3>
             <p>Android and iOS App developement.</p>
+            <p class="description">Apps? Ahh! Best place to please your customer. Believe me!</p>
         </div>
         <div class="section-full section-work">And here is my most
             <br>
@@ -88,18 +102,20 @@
                 </div>
             </div>
         </div>
-        <div class="section-full contact-me">You can
+        <div class="section-full contact-me">
+                I am happy that you made this long <i class="hand-poniting-up"></i>.
+                Feel free to
             <h2 id="contact-me">Contact me</h2>
             <h5>by leaving message here</h5>
-            <form action="#" method="post">
+            <form id="sendMsgFormFooter" method="post">
                 <div class="form-group">
-                    <input type="text" name="name" class="form-control col-md-4 d-inline" placeholder="Name" autocomplete='name'>
-                    <input type="email" name="email" id="email" class="form-control col-md-4 d-inline" placeholder="Email" autocomplete='email'>
+                    <input type="text" name="name" id="nameFooter" class="form-control col-md-4 d-inline" placeholder="Name" autocomplete='name' required>
+                    <input type="email" name="email" id="emailFooter" class="form-control col-md-4 d-inline" placeholder="Email" autocomplete='email' required>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control col-md-8 d-inline" name="message" rows="3" placeholder="Your message here"></textarea>
+                    <textarea class="form-control col-md-8 d-inline" name="message" id="messageFooter" rows="3" placeholder="Your message here" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-dark mb-2">Send message</button>
+                <button type="submit" class="submitBtn btn btn-dark mb-2">Send message</button>
             </form>
             <br>
             <h5>Or, Calling me at</h5>
@@ -109,15 +125,15 @@
             <a href="https://www.facebook.com/arfat.binkileb.14" target="_blank" class="social-links">
                 <img class="social-links" src="assets/svgs/facebook.svg" alt="facebook">
             </a>
-            <a href="#" class="social-links">
+            <!-- Not now<a href="#" class="social-links">
                 <img class="social-links" src="assets/svgs/instagram.svg" alt="instagram">
-            </a>
+            </a> -->
             <a href="https://github.com/arfatbk" target="_blank" class="social-links">
                 <img class="social-links" src="assets/svgs/github.svg" alt="github">
             </a>
-            <a href="#" class="social-links">
+            <!-- Not now<a href="#" class="social-links">
                 <img class="social-links" src="assets/svgs/youtube.svg" alt="youtube">
-            </a>
+            </a> -->
 
         </div>
         <div class="section-about">
@@ -172,9 +188,10 @@
         </div>
     </div>
     <div class="footer bg-dark">
-        &copy;
-        <strong>Fox media </strong> &nbsp;
+        &copy; 
+        <strong>Arfat bin kileb </strong> &nbsp;
         <small>2018</small>
+        <div class="logo-footer"></div>
     </div>
 
     <script src="assets/js/jquery.min.js"></script>
