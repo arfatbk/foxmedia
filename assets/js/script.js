@@ -37,7 +37,7 @@ $(document).ready(function(){
         
             $.ajax({
                 type:'POST',
-                url:'http://localhost:8000/send/message/',
+                url:'https://django-mail-server.herokuapp.com/send/message/',
                 data:{
                     name:$('#name').val(),
                     email:$('#email').val(),
