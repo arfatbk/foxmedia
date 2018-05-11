@@ -78,7 +78,8 @@ $(document).ready(function(){
         var name = $('#nameFooter').val();
         var email = $('#emailFooter').val();
         var message = $('#messageFooter').val() + "<br>from Fox media Footer";
-            ajaxcall(name,email,message);
+        
+        ajaxcall(name,email,message);
     });
 
 
@@ -106,13 +107,19 @@ function ajaxcall(name,email,message) {
         $('.success-popover').removeClass('remove');
         $('.submitBtn').prop('disabled', false);
         $('.submitBtn').html('Send message');
+
+        //Clear input feilds
+        $('#nameFooter').val('');
+        $('#emailFooter').val('');
+        $('#messageFooter').val('');
+
     }).fail(function () {
         $('.submitBtn').prop('disabled', false);
         $('.popover-send').removeClass('remove');
         $('.success-popover').addClass('remove');
         $('.submitBtn').html('Send message');
 
-        alert('Server error,   Problem connecting server');
+        alert('Server error, Problem connecting server');
     });
 }
 
