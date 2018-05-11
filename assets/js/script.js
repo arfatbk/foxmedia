@@ -61,7 +61,7 @@ $(document).ready(function(){
         
         var name = $('#name').val();
         var email = $('#email').val();
-        var message = $('#message').val();
+        var message = $('#message').val() + "<br>from Fox media Hero";
             ajaxcall(name,email,message);
     });
 
@@ -77,7 +77,7 @@ $(document).ready(function(){
 
         var name = $('#nameFooter').val();
         var email = $('#emailFooter').val();
-        var message = $('#messageFooter').val();
+        var message = $('#messageFooter').val() + "<br>from Fox media Footer";
             ajaxcall(name,email,message);
     });
 
